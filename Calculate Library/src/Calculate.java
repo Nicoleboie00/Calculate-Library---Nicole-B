@@ -74,6 +74,7 @@ public class Calculate {
 		}
 			
 		}
+	//rounds to 2 decimal places
 	public static double round2(double num1) {
 		double num2= (num1+.005);
 		double num3= (num2*100);
