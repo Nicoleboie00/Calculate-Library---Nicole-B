@@ -67,7 +67,7 @@ public class Calculate {
 		return (num2);
 	}
 	public static int min(int num1, int num2) {
-		if (num1>num2) {
+		if (num1<num2) {
 			return (num1);
 		}else {
 			return (num2);
@@ -82,8 +82,39 @@ public class Calculate {
 		double num5= (double)num4/100;
 		return (num5);	
 		}	
-			
+	public static double exponent(double num1, int num2) {
+		double num3 = 1;
+				for (int a = 0; a < num2; a++) {
+					num3*=num1 ;
+				}
+		return (num3);
+	}
+	public static int factorial(int num1) {
+		int num2 = 1;
+			for (int a = 0; a <= num1; a++);
+				num2*= num1;
+		return (num2);
 	}	
+	public static boolean isPrime (int num1) {
+		int num2 = 2;
+			while(!isDivisbleBy (num1, num2)) {
+				num2++;
+		}
+		if(num2 == num1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public static int gcf(int num1, int num2) {
+		int num3 = (int) max(num1, num2);
+		if (isPrime(num1));
+		return (num3);
+		}		
+}
+	
+
+
 	
 
 	
