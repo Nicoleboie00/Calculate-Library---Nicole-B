@@ -20,9 +20,17 @@ public class DoMath {
 		System.out.println(Calculate.max(1, 2, 3));
 		System.out.println(Calculate.min(1, 2));
 		System.out.println(Calculate.round2(3.146));
+<<<<<<< HEAD
 		System.out.println(Calculate.exponent(2, 2));
 		System.out.println(Calculate.factorial(9));
 		System.out.println(Calculate.isPrime(3));
 		System.out.println(Calculate.gcf(9,81));
+=======
+		System.out.println(Calculate.exponent(2,0));
+		System.out.println(Calculate.factorial(4));
+		System.out.println(Calculate.isPrime(3));
+		System.out.println(Calculate.gcf(9,81));
+		System.out.println(Calculate.sqrt(2));
+>>>>>>> branch 'master' of https://github.com/Nicoleboie00/Calculate-Library---Nicole-B.git
 	}
 }
