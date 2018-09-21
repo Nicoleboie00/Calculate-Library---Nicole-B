@@ -80,28 +80,23 @@ public class Calculate {
 		return (num2);
 	}
 	public static int min(int num1, int num2) {
-<<<<<<< HEAD
-		if (num1<num2) {
-=======
 		//returns the smaller of two numbers
-		if (num1>num2) {
->>>>>>> branch 'master' of https://github.com/Nicoleboie00/Calculate-Library---Nicole-B.git
+		if (num1<num2) {
 			return (num1);
-		}else {
+		}else{
 			return (num2);
-		}
-			
-		}
-	//rounds to 2 decimal places
+		}	
+	}
 	public static double round2(double num1) {
+		//rounds to 2 decimal places
 		double num2= (num1+.005);
 		double num3= (num2*100);
 		int num4= (int)num3;
 		double num5= (double)num4/100;
 		return (num5);	
 		}	
-<<<<<<< HEAD
 	public static double exponent(double num1, int num2) {
+	//returns a number raised by a positive exponent
 		double num3 = 1;
 				for (int a = 0; a < num2; a++) {
 					num3*=num1 ;
@@ -109,73 +104,41 @@ public class Calculate {
 		return (num3);
 	}
 	public static int factorial(int num1) {
+	//returns the factorial of a number
 		int num2 = 1;
 			for (int a = 0; a <= num1; a++);
 				num2*= num1;
 		return (num2);
 	}	
 	public static boolean isPrime (int num1) {
+		//determines if a number is prime
 		int num2 = 2;
-			while(!isDivisbleBy (num1, num2)) {
+			while(!isDivisbleBy(num1, num2)) {
 				num2++;
 		}
 		if(num2 == num1) {
-			return true;
+			return (true);
 		} else {
-			return false;
+			return (false);
 		}
 	}
 	public static int gcf(int num1, int num2) {
+	//returns the greatest common factor of two numbers
 		int num3 = (int) max(num1, num2);
 		if (isPrime(num1));
 		return (num3);
-		}		
-}
-	
-
-
-=======
-	//returns a number raised by a positive exponent
-	public static double exponent(double num1, int num2) {
-			double num3 = 1;
-			for (int i = 0; i < num2; i++) {
-				num3 *= num1;
-			}
-			return num3;
+		}	
+	public static double sqrt (double num1) {
+		double Test1 = (num1/10);	
+		while (Test1*Test1 > num1+0.5 || Test1*Test1 < num1-0.05){
+		double sqr =((num1/Test1 + Test1)*.5);
+			Test1 = (sqr);
 		}
-	//returns the factorial of a number
-	public static int factorial(int num1) {
-		int num2= 1;
-		for (int i = 1; i <= num1; i++) {
-			num2 *= i;
-		}
-		return num2;
-	}
-	//determines if a number is prime
-	public static boolean isPrime (int num1) {
-		int num2 = 2;
-		while(!isDivisbleBy(num1, num2)) {
-			num2++;
-		}
-		if(num2 == num1) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	public static int gcf(int num1, int num2) {
-		//returns the greatest common factor of two numbers
-		int num3 = (int) max(num1, num2);
-		if (isPrime(num1));
-		return num3;
-	}
-	public static double sqrt(double num1, double num2) {
-		int num2 = 1
+		return round2(Test1);
 	}
 }
 
-		
->>>>>>> branch 'master' of https://github.com/Nicoleboie00/Calculate-Library---Nicole-B.git
+
 	
 
 	
