@@ -122,13 +122,20 @@ public class Calculate {
 			return (false);
 		}
 	}
-	public static int gcf(int num1, int num2) {
-	//returns the greatest common factor of two numbers
-		int num3 = (int) max(num1, num2);
-		if (isPrime(num1));
-		return (num3);
-		}	
+	public static int gcf (int num1, int num2) {
+		//returns the greatest common factor between 2 numbers
+        int a = (int) max(num1, num2);
+        if(isPrime(a)) {
+            return 1;
+        } else {
+        	 int b= (int) min(num1, num2);
+            while (!isDivisbleBy(b,a))
+                a--;
+            }
+            return a;
+        }
 	public static double sqrt (double num1) {
+		//returns a  number squared
 		double Test1 = (num1/10);	
 		while (Test1*Test1 > num1+0.5 || Test1*Test1 < num1-0.05){
 		double sqr =((num1/Test1 + Test1)*.5);
