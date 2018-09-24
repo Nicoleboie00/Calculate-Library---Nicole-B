@@ -3,24 +3,24 @@
  * @version September 6, 2018
  */
 public class Calculate {
-	//returns the square of the input
+	//returns the number times itself
 	public static int square(int number) {
 		return number*number;
 	}
 	public static int cube(int number) {
-		//returns the cube of the imput
+		//returns the number times itself 3 times
 		return number*number*number;
 	}
 	public static double average(double number1, double number2) {
-		//returns the average of two doubles
+		//returns the add two doubles then divide by two
 		return ((number1+number2)/2);
 	}
 	public static double average(double number1, double number2, double number3) {
-		//returns the average of three doubles
+		//returns the add three doubles together and diveide by three
 		return ((number1+number2+number3)/3);
 	}
 	public static double toDegrees(double number) {
-		//returns the double from radians to degrees
+		//returns the the double from radians to degrees)
 		return (number*(180/3.14159));
 	}
 	public static double toRadians(double number) {
@@ -28,7 +28,7 @@ public class Calculate {
 		return (number*(3.14159/180));
 	}
 	public static double discriminant(double number1, double number2, double number3) {
-		//returns the discriminant of three doubles
+		//returns the discriminant(the numbers under the root symbol in a quadratic formula) of three doubles
 		return ((number2*number2)-4*number1*number3);
 	}
 	public static String toImproperFrac(int number1, int number2, int number3) {
@@ -38,19 +38,23 @@ public class Calculate {
 	public static String toMixedNum(int number1, int number2) {
 		//returns a mixed fraction from an improper fraction
 		return((number1/number2)+"_"+(number1%number2)+ "/" + number2);
+		//divide one number by another, add a space, find the remainder from mod, print a division symbol, add 2
 	}
 	public static String foil(int num1, int num2, int num3, int num4, String variable ) {
 		//foils the binomial form of a quadratic equation
 		return (num1*num3+"n^2")+ "+" +((num1*num4)+(num2*num3))+ "n" + "+" + (num2*num4);
+		//foil the numbers adding n^2, n, or nothing to show it not a normal number but has a variable
 	}
 	public static boolean isDivisbleBy(int num1, int num2) {
 		//determines whether or not a number is divisible by another number
 		return (num1%num2==0);
+		//mod checks the remainder
 	}
 	public static double absValue(double num1) {
 		//returns the absolute value of a number
 		if (num1<0){
 		 return (num1*-1);
+		 //makes the negative value always positive
 		} else { 
 			return (num1);
 		}
@@ -64,7 +68,7 @@ public class Calculate {
 		}
 	}
 	public static double max(double num1, double num2, double num3) {
-		//returns the largets of three numbers
+		//returns the largest of three numbers
 		if (num1<num2) {
 			if (num2<num3) {
 				return (num3);
@@ -90,16 +94,23 @@ public class Calculate {
 	public static double round2(double num1) {
 		//rounds to 2 decimal places
 		double num2= (num1+.005);
+		//add .005 to num1
 		double num3= (num2*100);
+		//multiply by 100 to be capable of turning into an int
 		int num4= (int)num3;
+		//turn num3 into an int and call it num4 cutting off any remaining decimal numbers
 		double num5= (double)num4/100;
+		//turn back into a double so it is able to return
 		return (num5);	
 		}	
 	public static double exponent(double num1, int num2) {
 	//returns a number raised by a positive exponent
 		double num3 = 1;
+		//intialize a variable
 				for (int a = 0; a < num2; a++) {
+					//num1 is always positive 
 					num3*=num1 ;
+					//num3 is the old num3 times num1
 				}
 		return (num3);
 	}
@@ -107,7 +118,9 @@ public class Calculate {
 	//returns the factorial of a number
 		int num2 = 1;
 			for (int a = 0; a <= num1; a++);
+			//as long as a is less than or equal to one, starting from zero, add 1 to a
 				num2*= num1;
+			//num2 is the old num2 times num1
 		return (num2);
 	}	
 	public static boolean isPrime (int num1) {
@@ -115,8 +128,10 @@ public class Calculate {
 		int num2 = 2;
 			while(!isDivisbleBy(num1, num2)) {
 				num2++;
+			//if num1 is divisible by num2 add 1 to two
 		}
 		if(num2 == num1) {
+			//determining if they are the same number
 			return (true);
 		} else {
 			return (false);
@@ -125,11 +140,15 @@ public class Calculate {
 	public static int gcf (int num1, int num2) {
 		//returns the greatest common factor between 2 numbers
         int a = (int) max(num1, num2);
+        //finds the max number
         if(isPrime(a)) {
+        	//finds if the max number is prime, which if true means the gcf is 1
             return 1;
         } else {
         	 int b= (int) min(num1, num2);
+        	 //find the minimum number
             while (!isDivisbleBy(b,a))
+            	//if the minimum number is divisible by  the max number subtract one from the max
                 a--;
             }
             return a;
@@ -138,7 +157,9 @@ public class Calculate {
 		//returns a  number squared
 		double Test1 = (num1/10);	
 		while (Test1*Test1 > num1+0.5 || Test1*Test1 < num1-0.05){
+			//test1^2 is more than num1+.5 or test1^2 is less than num1+.5
 		double sqr =((num1/Test1 + Test1)*.5);
+		//initialize sqr as num1 divided by 2(test1) times .5
 			Test1 = (sqr);
 		}
 		return round2(Test1);
