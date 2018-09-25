@@ -33,6 +33,7 @@ public class Calculate {
 	}
 	public static String toImproperFrac(int wholenum, int num, int den) {
 		//returns the improper fraction from a proper fraction
+		if(den==0)throw new IllegalArgumentException("Denominator can't be zero");
 		return ((wholenum*den)+num+"/"+den);
 	}
 	public static String toMixedNum(int num, int den) {
@@ -47,6 +48,7 @@ public class Calculate {
 	}
 	public static boolean isDivisibleBy(int num1, int num2) {
 		//determines whether or not a number is divisible by another number
+		if(num2==0)throw new IllegalArgumentException("Can't divide by 2");
 		return (num1%num2==0);
 		//mod checks the remainder
 	}
@@ -107,6 +109,7 @@ public class Calculate {
 	//returns a number raised by a positive exponent
 		double num2 = 1;
 		//intialize a variable
+		if(exp<0)throw new IllegalArgumentException("no negative numbers");
 				for (int a = 0; a < exp; a++) {
 					//num1 is always positive 
 					num2*=num1 ;
@@ -117,6 +120,7 @@ public class Calculate {
 	public static int factorial(int num1) {
 	//returns the factorial of a number
 		int num2 = 1;
+		if(num1<0)throw new IllegalArgumentException("no negative numbers");
 			for (int a = 0; a <= num1; a++);
 			//as long as a is less than or equal to one, starting from zero, add 1 to a
 				num2*= num1;
@@ -155,6 +159,7 @@ public class Calculate {
         }
 	public static double sqrt (double num1) {
 		//returns a  number squared
+		if(num1<0)throw new IllegalArgumentException("Can't square a negative number");
 		double Test1 = (num1/10);	
 		while (Test1*Test1 > num1+0.5 || Test1*Test1 < num1-0.05){
 			//test1^2 is more than num1+.5 or test1^2 is less than num1+.5
@@ -163,6 +168,28 @@ public class Calculate {
 			Test1 = (sqr);
 		}
 		return round2(Test1);
+	}
+
+	public static String quadform (int a, int b, int c) {
+		double base = (double) (sqrt(discriminant(a,b,c)));
+		double XOne = (double) (-b+(base)/(2*a));
+		double XTwo = (double) (-b-(base)/(2*a));
+		double rXOne = round2(XOne);
+		double rXTwo = round2(XTwo);
+		if (rXOne==rXTwo)
+			return (+rXOne+);
+	}else{
+		double SX1 = min(rXOne, rXTwo);
+		double LX1 = max(rXOne, rXTwo);
+		return (SX1+ "and"+ LX1);
+	}	
+	public static double min(double num1, double num2) {
+		//returns the smaller of two numbers
+		if (num1<num2) {
+			return (num1);
+		}else{
+			return (num2);
+		}	
 	}
 }
 
