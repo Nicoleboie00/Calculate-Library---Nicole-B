@@ -16,28 +16,28 @@ public class Calculate {
 		return ((number1+number2)/2);
 	}
 	public static double average(double number1, double number2, double number3) {
-		//returns the add three doubles together and diveide by three
+		//returns the add three doubles together and divide by three
 		return ((number1+number2+number3)/3);
 	}
 	public static double toDegrees(double number) {
 		//returns the the double from radians to degrees)
 		return (number*(180/3.14159));
 	}
-	public static double toRadians(double number) {
+	public static double toRadians(double deg1) {
 		//returns the double from degrees to radians
-		return (number*(3.14159/180));
+		return (deg1*(3.14159/180));
 	}
-	public static double discriminant(double number1, double number2, double number3) {
+	public static double discriminant(double a, double b, double c) {
 		//returns the discriminant(the numbers under the root symbol in a quadratic formula) of three doubles
-		return ((number2*number2)-4*number1*number3);
+		return ((b*b)-4*a*c);
 	}
-	public static String toImproperFrac(int number1, int number2, int number3) {
+	public static String toImproperFrac(int wholenum, int num, int den) {
 		//returns the improper fraction from a proper fraction
-		return ((number1*number3)+number2+"/"+number3);
+		return ((wholenum*den)+num+"/"+den);
 	}
-	public static String toMixedNum(int number1, int number2) {
+	public static String toMixedNum(int num, int den) {
 		//returns a mixed fraction from an improper fraction
-		return((number1/number2)+"_"+(number1%number2)+ "/" + number2);
+		return((num/den)+"_"+(num%den)+ "/" + den);
 		//divide one number by another, add a space, find the remainder from mod, print a division symbol, add 2
 	}
 	public static String foil(int num1, int num2, int num3, int num4, String variable ) {
@@ -45,7 +45,7 @@ public class Calculate {
 		return (num1*num3+"n^2")+ "+" +((num1*num4)+(num2*num3))+ "n" + "+" + (num2*num4);
 		//foil the numbers adding n^2, n, or nothing to show it not a normal number but has a variable
 	}
-	public static boolean isDivisbleBy(int num1, int num2) {
+	public static boolean isDivisibleBy(int num1, int num2) {
 		//determines whether or not a number is divisible by another number
 		return (num1%num2==0);
 		//mod checks the remainder
@@ -103,16 +103,16 @@ public class Calculate {
 		//turn back into a double so it is able to return
 		return (num5);	
 		}	
-	public static double exponent(double num1, int num2) {
+	public static double exponent(double num1, int exp) {
 	//returns a number raised by a positive exponent
-		double num3 = 1;
+		double num2 = 1;
 		//intialize a variable
-				for (int a = 0; a < num2; a++) {
+				for (int a = 0; a < exp; a++) {
 					//num1 is always positive 
-					num3*=num1 ;
-					//num3 is the old num3 times num1
+					num2*=num1 ;
+					//num2 is the old num2 times num1
 				}
-		return (num3);
+		return (num2);
 	}
 	public static int factorial(int num1) {
 	//returns the factorial of a number
@@ -126,7 +126,7 @@ public class Calculate {
 	public static boolean isPrime (int num1) {
 		//determines if a number is prime
 		int num2 = 2;
-			while(!isDivisbleBy(num1, num2)) {
+			while(!isDivisibleBy(num1, num2)) {
 				num2++;
 			//if num1 is divisible by num2 add 1 to two
 		}
@@ -147,7 +147,7 @@ public class Calculate {
         } else {
         	 int b= (int) min(num1, num2);
         	 //find the minimum number
-            while (!isDivisbleBy(b,a))
+            while (!isDivisibleBy(b,a))
             	//if the minimum number is divisible by  the max number subtract one from the max
                 a--;
             }
