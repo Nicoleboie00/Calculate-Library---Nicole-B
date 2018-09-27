@@ -121,11 +121,12 @@ public class Calculate {
 	//returns the factorial of a number
 		int num2 = 1;
 		if(num1<0)throw new IllegalArgumentException("no negative numbers");
-			for (int a = 0; a <= num1; a++);
-			//as long as a is less than or equal to one, starting from zero, add 1 to a
-				num2*= num1;
-			//num2 is the old num2 times num1
-		return (num2);
+		for (int a = 1; a <= num1;a++) {
+				//as long as a is less than or equal to one, starting from zero, add 1 to a
+				num2*=a;
+		}
+			return(num2);
+		
 	}	
 	public static boolean isPrime (int num1) {
 		//determines if a number is prime
@@ -172,16 +173,26 @@ public class Calculate {
 
 	public static String quadform (int a, int b, int c) {
 		double base = (double) (sqrt(discriminant(a,b,c)));
+		if (discriminant(a,b,c)<0) {
+			return ("no real roots");
+		}
+		//sqrt of the discriminant
 		double XOne = (double) (-b+(base)/(2*a));
+		//adding base in the quad form
 		double XTwo = (double) (-b-(base)/(2*a));
+		//subracting the base in the quad form
 		double rXOne = round2(XOne);
 		double rXTwo = round2(XTwo);
-		if (rXOne==rXTwo)
-			return (+rXOne+);
-	}else{
+		//rounds roots 2 decimal places
+		if (rXOne==rXTwo) {
+			return (rXOne+ "");
+		//if there is only one root, return that
+		}else{
 		double SX1 = min(rXOne, rXTwo);
 		double LX1 = max(rXOne, rXTwo);
+		//if there are two roots find which is min and max, then return it in that order
 		return (SX1+ "and"+ LX1);
+		}
 	}	
 	public static double min(double num1, double num2) {
 		//returns the smaller of two numbers
