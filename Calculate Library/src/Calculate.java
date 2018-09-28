@@ -177,9 +177,9 @@ public class Calculate {
 			return ("no real roots");
 		}
 		//sqrt of the discriminant
-		double XOne = (double) (-b+(base)/(2*a));
+		double XOne = (double) ((-b+(base))/(2*a));
 		//adding base in the quad form
-		double XTwo = (double) (-b-(base)/(2*a));
+		double XTwo = (double) ((-b-(base))/(2*a));
 		//subracting the base in the quad form
 		double rXOne = round2(XOne);
 		double rXTwo = round2(XTwo);
