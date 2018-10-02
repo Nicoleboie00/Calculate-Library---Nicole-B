@@ -182,14 +182,14 @@ public class Calculate {
 		}else if (discriminant(a,b,c)==0)	{
 			return (-b/(2*a)+ "");
 		}else{
-		//sqrt of the discriminant
+		//the top both positive and negative parts
 		double XOne = round2((-b+(top))/(2*a));
 		//adding top in the quad form
 		double XTwo = round2((-b-(top))/(2*a));
-		//rounded numerator of plus or minus top
+		//retuning if there is one root
 		if (XOne==XTwo) {
 			return (XOne+ "");
-		//if there is only one root, return that
+		//min max of roots
 		}else{
 		double SX1 = min(XOne, XTwo);
 		double LX1 = max(XOne, XTwo);
