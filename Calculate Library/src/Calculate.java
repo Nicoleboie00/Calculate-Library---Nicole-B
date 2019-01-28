@@ -29,7 +29,8 @@ public class Calculate {
 	}
 	public static double discriminant(double a, double b, double c) {
 		//returns the discriminant(the numbers under the root symbol in a quadratic formula) of three doubles
-		return ((b*b)-4*a*c);
+		double answ=(b*b)-4*a*c;
+		return (answ);
 	}
 	public static String toImproperFrac(int wholenum, int num, int den) {
 		//returns the improper fraction from a proper fraction
@@ -175,29 +176,31 @@ public class Calculate {
 		}
 		return round2(Test1);
 	}
-	public static String quadform (int a, int b, int c) {
-		double top = (double) (sqrt(discriminant(a,b,c)));
+	public static String quadForm (int a, int b, int c) {
+		double top = (double) (discriminant(a,b,c));
 		if (discriminant(a,b,c)<0) {
 			return ("no real roots");
 		}else if (discriminant(a,b,c)==0)	{
 			return (-b/(2*a)+ "");
 		}else{
-		//the top both positive and negative parts
-		double XOne = round2((-b+(top))/(2*a));
-		//adding top in the quad form
-		double XTwo = round2((-b-(top))/(2*a));
-		//retuning if there is one root
-		if (XOne==XTwo) {
-			return (XOne+ "");
-		//min max of roots
-		}else{
-		double SX1 = min(XOne, XTwo);
-		double LX1 = max(XOne, XTwo);
-		//if there are two roots find which is min and max, then return it in that order
-		return (SX1+ " and "+ LX1);
+		double top1 = (double) (sqrt(top));
+			//the top both positive and negative parts
+			double XOne = round2((-b+(top1))/(2*a));
+			//adding top in the quad form
+			double XTwo = round2((-b-(top1))/(2*a));
+			//returning if there is one root
+			if (XOne==XTwo) {
+				return (XOne+ "");
+				//min max of roots
+			}else{
+				double SX1 = min(XOne, XTwo);
+				double LX1 = max(XOne, XTwo);
+				//if there are two roots find which is min and max, then return it in that order
+				return (SX1+ " and "+ LX1);
+			}
 		}
 	}	
-}
+
 	public static double min(double num1, double num2) {
 		//returns the smaller of two numbers
 		if (num1<num2) {

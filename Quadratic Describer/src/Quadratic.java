@@ -3,41 +3,43 @@
  * @Version October 5, 2018
  */
 public class Quadratic {
-	public static String quadrDescriber(double a, double b, double c) {
+	public static void quadrDescriber(double a, double b, double c) {
 	//opens
-		String returnString = "";
+		String open;
 		if (a>0) {
-			String open = ("Opens: " + "Up");	
+			 open = ("Opens: " + "Up");	
 		}else {
-			String open= ("Opens: " + "Down");
+			 open= ("Opens: " + "Down");
 			//return open
 			//do i have to find if a = 0
 		}
-	//axis of symmetry
+		//axis of symmetry
 		double line = ((-b)/(2*a));
-			String aos = ("Axis of Symmetry: " + line);
-			//return aos
-	//vertex
-			double h = b/(2*a);
-			//x value vertex equation
-			double k = a*(h*h)+h+c;
-			String YINT = ("y-intercept(s):" + c);
-			returnString = open +"/n" +aos+"/n";
-			System.out.println("Description of the graph of:");
-			System.out.println("y = " + a + "x^2 + " + b + "x + " + c);
-			System.out.println("\n" + open);
-			System.out.println(aos);
-			System.out.println("Vertex: (" + h + ", " + k + ")");
-			System.out.println(XINT);
-			System.out.println(YINT);
-			System.out.println("\n Do you want to keep going? "+"(Type \"quit\" to end )");
+		String aos = ("Axis of Symmetry: " + line);
+		//return aos
+		//vertex
+		double h = b/(2*a);
+		//x value vertex equation
+		double k = a*(h*h)+h+c;
+		
+		String XInt= quadform(a,b,c);
+		String YINT = ("" + c);
+		
+		System.out.println("Description of the graph of:");
+		System.out.println("y = " + a + " x^2 + " + b + " x + " + c);
+		System.out.println("\n" + open);
+		System.out.println(aos);
+		System.out.println("Vertex: (" + h + ", " + k + ")");
+		System.out.println("x-intercept(s): " + XInt);
+		System.out.println("y-intercept(s): " + YINT);
+		
 	}
 	
 		//y value vertex equation/plug x into the equation
 		//return (h,k)
 	public static double discriminant(double a, double b, double c) {
 		//returns the discriminant(the numbers under the root symbol in a quadratic formula) of three doubles
-		return ((b*b)-4*a*c);
+		return ((b*b)-(4*a*c));
 	}
 	
 	public static double round2(double num1) {
@@ -90,36 +92,29 @@ public class Quadratic {
 	}	
 	
 //x intercept
-	public static String quadform (int a, int b, int c) {
-			double top = (double) (sqrt(discriminant(a,b,c)));
-			double XOne;
-			double XTwo;
-			
-			if (discriminant(a,b,c)<0) {
-				return ("no real roots");
-			}else if (discriminant(a,b,c)==0)	{
-				return (-b/(2*a)+ "");
-			}else{
-				//the top both positive and negative parts
-				XOne = round2((-b+(top))/(2*a));
-				//adding top in the quad form
-				XTwo = round2((-b-(top))/(2*a));
-				//returning if there is one root
-			}
-			
-			if (XOne==XTwo) {
-				return (XOne+ "");
-			//min max of roots
-			}else{
-				double SX1 = min(XOne, XTwo);
-				double LX1 = max(XOne, XTwo);
-				//if there are two roots find which is min and max, then return it in that order
-				String XINT = ("x-intercept(s):" + SX1+ " and "+ LX1);
-			}
-	//y intercept
-			
-	}
+	public static String quadform (double a, double b, double c) {
+		double top = (double) (sqrt(discriminant(a,b,c)));
+		if (discriminant(a,b,c)<0) {
+			return ("no real roots");
+		}else if (discriminant(a,b,c)==0)	{
+			return (-b/(2*a)+ "");
+		}else{
+		//the top both positive and negative parts
+		double XOne = round2((-b+(top))/(2*a));
+		//adding top in the quad form
+		double XTwo = round2((-b-(top))/(2*a));
+		//retuning if there is one root
+		if (XOne==XTwo) {
+			return (XOne+ "");
+		//min max of roots
+		}else{
+		double SX1 = min(XOne, XTwo);
+		double LX1 = max(XOne, XTwo);
+		//if there are two roots find which is min and max, then return it in that order
+		return (SX1+ " and "+ LX1);
+		}
+	}	
+}
 }
 	
-
 
